@@ -8,17 +8,16 @@ function MovieCard({ movie }) {
   return (
     <div className="movie-card">
       <div className="movie-poster">
-        <img src={movie.node.main_picture.medium} alt={movie.node.title} />
+        <img src={movie.images.jpg.large_image_url} alt={movie.title_english} />
         <div className="movie-overlay">
           <button className="favourite-btn" onClick={onFavouriteClick}>
             ♥
           </button>
         </div>
-
-        <div className="movie-info">
-          <h3>{movie.node.title}</h3>
-          <p>{movie.release}</p>
-        </div>
+      </div>
+      <div className="movie-info">
+          <h3>{movie.title_english}</h3>
+          <p>{movie.season} {movie.year}</p>
       </div>
     </div>
   );
