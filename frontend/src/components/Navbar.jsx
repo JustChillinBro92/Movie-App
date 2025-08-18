@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 
-import { useState, useEffect } from "react";
-import { getPopularAnimes } from "../services/api";
+// import { useState, useEffect } from "react";
+// import { getPopularAnimes } from "../services/api";
 
 function Navbar() {
   return (

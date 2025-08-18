@@ -4,10 +4,11 @@ import "./css/App.css";
 import Home from "./pages/Home";
 import Favourites from "./pages/Favourites";
 import Navbar from "./components/Navbar";
+import { AnimeProvider } from "./contexts/AnimeContext";
 
 function App() {
   return (
-    <div>
+    <AnimeProvider>
       <Navbar />
       <main className="main-content">
         <Routes>
@@ -15,7 +16,7 @@ function App() {
           <Route path="/favourites" element={<Favourites />}></Route>
         </Routes>
       </main>
-    </div>
+    </AnimeProvider>
   );
 }
 

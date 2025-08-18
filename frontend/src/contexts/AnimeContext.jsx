@@ -15,7 +15,7 @@ export const AnimeProvider = ({children}) => {
 
     // stringifying favs and storing in local storage
     useEffect(() => {
-        localStorage.setItem(JSON.stringify(favourites));
+        localStorage.setItem("favourites", JSON.stringify(favourites));
     }, [favourites])
 
     const addToFavourites = (anime) => {
@@ -26,16 +26,16 @@ export const AnimeProvider = ({children}) => {
         setFavourites(prev => prev.filter(anime => anime.mal_id != animeId));
     }
 
-    const isFavoutite = (animeId) => {
-        return favourites(anime => anime.mal_id === animeId);
+    const isFavourite = (animeId) => {
+        return favourites.some(anime => anime.mal_id === animeId);
     }
 
-    const value = [
+    const value = {
         favourites,
         addToFavourites,
         removeFromFavourites,
-        isFavoutite
-    ]
+        isFavourite,
+    }
 
     return <AnimeContext.Provider value={value}>
         {children}

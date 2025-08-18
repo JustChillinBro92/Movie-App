@@ -69,7 +69,7 @@ function Home() {
         <div className="movies-grid">
           {animes.map(
             (anime) => (
-                <MovieCard movie={anime} key={anime.mal_id} />
+                <MovieCard anime={anime} key={anime.mal_id} />
               )
           )}
         </div>
